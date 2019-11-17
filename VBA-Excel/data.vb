@@ -74,7 +74,6 @@ End Sub
 Sub Stocks()
 
     'Init Variables
-    Dim ticker As String
     Dim currentTicker As String
     Dim newTicker As String
     Dim yearlyChange As Double
@@ -85,7 +84,6 @@ Sub Stocks()
     Dim volume As Long
     Dim outputRow As Integer
     
-    ticker = ""
     outputRow = 1
 
     'Make Headers
@@ -105,25 +103,19 @@ Sub Stocks()
     
     For i = 2 To 70926
 
-    'closePrice = cells(i,6).Value
-    'openPrice = cells(i,3).Value
-
     currentTicker = Cells(i, 1).Value
     newTicker = Cells(i + 1, 1).Value
     volume = 0
     moreVolume = Cells(i, 7).Value
 
 
-    
-    
-
          If currentTicker <> newTicker Then
 
-            closePrice = Cells(i,f).Value
+            closePrice = Cells(i,6).Value
 
             yearlyChange = closePrice - openPrice
 
-            openPrice = Cells(i+1,c).Value
+            openPrice = Cells(i+1,3).Value
 
             'ticker = currentTicker.value
             'Add Vol
